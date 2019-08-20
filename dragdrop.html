@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Drag & Drop</h1>
+        <div id="dragstartdiv" ondragover="draggedOverSource(event)">
+            <img src="./images/hop.png" 
+                alt="hop"
+                width="50"
+                draggable="true"
+                id="dragme"
+                ondragstart="imageIsDragged(event)">
+        </div>
+        <div id="dragstopdiv" ondrop="imageDropped(event)" ondragover="draggedOverTarget(event)">
+            drop here....
+        </div>
+
+        <script>
+            function draggedOverSource(e){
+                e.preventDefault()
+                console.log("Dragging on source div");
+                console.log(e);
+            }
+
+            function imageIsDragged(e){
+                //e.preventDefault();
+                console.log("Image is being dragged!")
+                console.log(e);
+                console.log(e.target.id);
+                var tempid = e.dataTransfer.setData("sourceid", e.target.id)
+                console.log(e);
+            }
+
+            function imageDropped(e){
+                e.preventDefault()
+                var tempid = e.dataTransfer.getData("sourceid")
+                console.log(tempid);
+                var tempImage = document.getElementById(tempid)
+                e.target.innerHTML = ""
+                e.target.appendChild(tempImage)
+            }
+
+            function draggedOverTarget(e){
+                e.preventDefault()
+
+            }
+
+        
+        
+        </script>
+    </body>
+</html>
