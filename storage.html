@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Web Storage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+        <h1>Web Storage</h1>
+        <div id="output">
+            
+        </div>
+        <button onclick="changeName()">Change</button>
+        <script>
+            if(typeof(Storage) == "undefined"){
+                var divref = document.getElementById("output")
+                divref.innerText = "Local Storage Support Not Available!"
+            }else{
+                localStorage.setItem("lname", "Daga")
+                localStorage.setItem("fname", "prafful")
+            }
+
+
+          
+            function changeName(){
+                var divref = document.getElementById("output")
+                var fn = localStorage.getItem("fname")
+                var ln =  localStorage.getItem("lname")
+                divref.innerText = fn + " " + ln
+            }
+        </script>
+    </body>
+</html>

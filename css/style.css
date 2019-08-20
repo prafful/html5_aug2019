@@ -1,0 +1,10 @@
+body{
+    background-color: azure;
+}
+
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: blue;
+    border-bottom: 1px solid darkblue;
+    text-align: center;
+}
