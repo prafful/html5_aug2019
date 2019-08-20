@@ -40,12 +40,27 @@ function loadAllTodo(){
     for(var i =0; i< maximumcounter; i++){
         //create new li items in memory
         var newli = document.createElement("li")
+        //create new button in new li
+        var newbutton = document.createElement("button")
+        newbutton.innerHTML = "Done"
         //set inner text of new li to todo_i
         //<li>any task at counter i </li>
         newli.innerHTML = localStorage.getItem("todo_" + i)
+        //attach event handler to newbutton
+        newbutton.setAttribute("onclick", "deletetodo("+ i + ")")
+        //append newbutton to newli
+        newli.appendChild(newbutton)
         //append new li to new ol
         newol.appendChild(newli)
+        
     }
 
 
+}
+
+function deletetodo(currenttask){
+    console.log("Delete called!" + currenttask);
+    localStorage.removeItem("todo_" + currenttask)
+    localStorage.counter --
+    loadAllTodo()
 }
