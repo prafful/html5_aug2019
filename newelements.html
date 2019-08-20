@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HTML5 new elements</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <h1>HTML5</h1>
+    <form>
+        <fieldset>
+            <legend>Personal Details</legend>
+            <div>
+                <label>First Name:</label>
+                <input type="text" placeholder="First name only...." pattern="[A-Za-z]{0,15}" required >
+            </div>
+            <div>
+                <label>DOB</label>
+                <input type="date" min="2019-08-19" step="7">
+            </div>
+            <div>
+                <label>Select week:</label>
+                <input type="week" min="2019-W30">
+            </div>
+            <div>
+                <label>Score:</label>
+                <input type="number" min="10" max="100" value="50" required step="5">
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="email" disabled>
+            </div>
+
+        </fieldset>
+        <fieldset>
+            <legend>Skills</legend>
+            <div>
+                <label>Rate HTML5 Skill:</label>
+                <input type="range" min="0" max="20" step="5">
+            </div>
+            <div>
+                <label>Color:</label>
+                <input type="color">
+            </div>
+            <div>
+                <label>Rate your progress:</label>
+                <progress value="50" max="100" min="0"></progress>
+            </div>
+            <div>
+                <label>Technologies:</label>
+                <input type="text" list="tech">
+                <datalist id="tech">
+                    <option value="html5">HTML5</option>
+                    <option value="java">Java</option>
+                    <option value="java8">Java 8</option>
+                    <option value="angular">Angular</option>
+                    <option value="reactive">Reactive</option>
+                    <option value="ai">Artificial Intelligence</option>
+                </datalist>
+                
+            </div>
+        </fieldset>
+        <br>
+        <button type="submit" >Check</button>
+
+    </form>
+</body>
+
+</html>

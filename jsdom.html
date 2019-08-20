@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+        <div id="content">
+
+        </div>
+        <ol class="city">
+            <li>Chennai</li>
+            <li>Kochi</li>
+            <li>Singapore</li>
+        </ol>
+        <ul class="city">
+            <li>Delhi</li>
+            <li>Mumbai</li>
+            <li>Pune</li>
+        </ul>
+        <img src="images/hop.png" width="50" id="hop">
+
+        <script>
+            var ref = document.getElementById("content")
+            ref.innerHTML = "Content from DOM!"
+            var allol = document.getElementsByTagName("li")
+            console.log(allol);
+            console.log(allol[0]);
+            console.log(allol.length);
+            var allcity = document.getElementsByClassName("city")
+            console.log(allcity);
+            console.log(allcity[0]);
+            for(var i=0; i<allol.length ; i++){
+                console.log(allol[i].innerHTML)
+            }
+            
+            //setTimeout(myfunction, 5000)
+            function myfunction(){
+                document.getElementById("hop").src = "images/green.png"
+            }
+            setInterval(myfunction2, 2000)
+            var counter  =0 
+            var hopimage = document.getElementById("hop")
+            function myfunction2(){
+                console.log("called every 2 sec: " + counter);
+                counter++
+              if(counter % 2 == 0){
+                  hopimage.src = "images/hop.png"
+              }else{
+                  hopimage.src = "images/green.png"
+              }
+
+            }
+
+        </script>
+    </body>
+</html>
